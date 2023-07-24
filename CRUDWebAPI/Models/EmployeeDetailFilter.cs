@@ -18,7 +18,7 @@ namespace CRUDWebAPI.Models
         public async Task<EmployeeDetail> FindOneAsync(int id)
         {
             using var cmd = Db.Connection.CreateCommand();
-            cmd.CommandText = @"SELECT * FROM `EmployeeDetail` WHERE `Id` = @id";
+            cmd.CommandText = @"SELECT * FROM `EmployeeDetail` WHERE `id` = @id";
             cmd.Parameters.Add(new MySqlParameter
             {
                 ParameterName = "@id",

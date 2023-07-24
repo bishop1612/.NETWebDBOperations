@@ -44,7 +44,7 @@ namespace CRUDWebAPI.Models
         public async Task UpdateAsync()
         {
             using var cmd = Db.Connection.CreateCommand();
-            cmd.CommandText = @"UPDATE `EmployeeDetail` SET `name` = @name, `cost_rate` = @cost_rate, `bill_rate` = @bill_rate WHERE `Id` = @id;";
+            cmd.CommandText = @"UPDATE `EmployeeDetail` SET `name` = @name, `cost_rate` = @cost_rate, `bill_rate` = @bill_rate WHERE `id` = @id;";
             BindParams(cmd);
             BindId(cmd);
             await cmd.ExecuteNonQueryAsync();
@@ -53,7 +53,7 @@ namespace CRUDWebAPI.Models
         public async Task DeleteAsync()
         {
             using var cmd = Db.Connection.CreateCommand();
-            cmd.CommandText = @"DELETE FROM `EmployeeDetail` WHERE `Id` = @id;";
+            cmd.CommandText = @"DELETE FROM `EmployeeDetail` WHERE `id` = @id;";
             BindId(cmd);
             await cmd.ExecuteNonQueryAsync();
         }
